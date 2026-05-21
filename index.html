@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indian Flex - Kishanganj | Premium B2B Printing Hub</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
     
     <style>
         /* ==========================================
@@ -20,6 +20,7 @@
             --indian-green: #008751;  /* Emerald Green Accent */
             --accent-cyan: #0ea5e9;   /* CMYK Cyan Touch */
             --whatsapp-green: #25D366;/* Official WhatsApp */
+            --instagram-pink: #E1306C;/* Official Instagram */
             --text-main: #1e293b;     /* Dark Charcoal Text for High Readability */
             --text-muted: #64748b;    /* Medium Muted Grey */
             --border-color: #e2e8f0;  /* Subtle Soft Border */
@@ -43,14 +44,14 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px; /* Standard internal padding */
+            padding: 0 24px;
         }
 
         /* ==========================================
            HEADER & NAVIGATION ARCHITECTURE
            ========================================== */
         header {
-            background: rgba(255, 255, 255, 0.95); /* Fixed rgba typo here */
+            background: rgba(255, 255, 255, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
@@ -65,22 +66,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 24px; /* Ensured proper side-spacing inside header */
+            padding: 15px 24px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+        .logo-wrapper {
             display: flex;
-            gap: 6px;
+            align-items: center;
         }
 
-        .logo span.orange { color: var(--indian-saffron); }
-        .logo span.blue { color: var(--primary-navy); }
+        .logo-img {
+            height: 45px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
 
         .nav-links {
             display: flex;
@@ -101,7 +102,7 @@
         }
 
         /* ==========================================
-           HERO SHOWCASE SECTION
+           HERO SHOWCASE SECTION WITH IMPROVED FONTS
            ========================================== */
         .hero-section {
             padding: 120px 0 90px 0;
@@ -116,18 +117,23 @@
 
         .hero-content h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 52px;
+            font-size: 58px;
             font-weight: 800;
             color: var(--primary-navy);
-            margin-bottom: 25px;
-            line-height: 1.15;
-            letter-spacing: -1px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1.5px;
         }
 
         .hero-content h1 span {
-            background: linear-gradient(to right, var(--indian-saffron), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            display: block;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: -0.5px;
+            margin-top: 5px;
+            background: none;
+            -webkit-text-fill-color: initial;
         }
 
         .hero-content p {
@@ -135,6 +141,13 @@
             color: var(--text-muted);
             margin-bottom: 35px;
             font-weight: 400;
+        }
+
+        .hero-action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn-whatsapp {
@@ -285,6 +298,15 @@
             font-weight: 600;
         }
 
+        .info-block a.clickable-link {
+            color: var(--primary-navy);
+            transition: color 0.2s;
+        }
+
+        .info-block a.clickable-link:hover {
+            color: var(--indian-saffron);
+        }
+
         .social-handles {
             display: flex;
             gap: 25px;
@@ -292,18 +314,28 @@
         }
 
         .social-handles a {
-            font-size: 15px;
-            color: var(--text-muted);
+            font-size: 16px;
             text-decoration: none;
-            border-bottom: 1px dashed var(--primary-navy);
+            border-bottom: 1px dashed transparent;
             padding-bottom: 2px;
-            font-weight: 600;
+            font-weight: 700;
             transition: 0.3s;
         }
 
-        .social-handles a:hover {
-            color: var(--indian-saffron);
-            border-bottom-color: var(--indian-saffron);
+        .social-handles a.insta-link {
+            color: var(--instagram-pink);
+        }
+        
+        .social-handles a.insta-link:hover {
+            border-bottom-color: var(--instagram-pink);
+        }
+
+        .social-handles a.wa-link {
+            color: var(--whatsapp-green);
+        }
+
+        .social-handles a.wa-link:hover {
+            border-bottom-color: var(--whatsapp-green);
         }
 
         .map-wrapper {
@@ -348,10 +380,17 @@
                 gap: 40px;
             }
             .hero-content h1 {
-                font-size: 38px;
+                font-size: 42px;
+                letter-spacing: -1px;
+            }
+            .hero-content h1 span {
+                font-size: 30px;
             }
             .nav-container {
-                padding: 20px 16px;
+                padding: 15px 16px;
+            }
+            .logo-img {
+                height: 38px;
             }
         }
 
@@ -369,8 +408,8 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">
-                <span class="orange">Indian</span><span class="blue">Flex</span>
+            <div class="logo-wrapper">
+                <a href="#"><img src="assets/logo.png" alt="Indian Flex Logo" class="logo-img"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
@@ -382,12 +421,14 @@
 
     <section class="hero-section">
         <div class="container hero-content">
-            <h1>Indian Flex<br><span>Printing Press</span></h1>
+            <h1>Indian Flex <span>Printing Press</span></h1>
             <p>We are a dedicated backend infrastructure for Cyber Cafes, Printers, and Wedding Card Vendors. High quality, competitive wholesale rates, and strict privacy protection.</p>
             
-            <a href="https://wa.me/919728788171?text=Namaskar%20Indian%20Flex%21%20Meri%20Kishanganj%20me%20shop%20hai%2C%20mujhe%20wholesale%20rate%20sheet%20chahiye." class="btn-whatsapp" target="_blank">
-                💬 Contact via WhatsApp
-            </a>
+            <div class="hero-action-buttons">
+                <a href="https://wa.me/919142835679?text=Namaskar%20Indian%20Flex%21%20Shop%20verification%20ke%20liye%20details%20bhej%20raha%20hu%2C%20wholesale%20rate%20sheet%20access%20chahiye." class="btn-whatsapp" target="_blank">
+                    💬 Contact via WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
@@ -413,7 +454,7 @@
         <div class="container">
             <h2 class="section-title">Our Printing Facility</h2>
             <div class="facility-display">
-                <img src="assets/facility.jpg" alt="Indian Flex Workshop Unit" class="facility-img">
+                <img src="assets/workshop.jpg" alt="Indian Flex Workshop Unit" class="workshop-img">
                 <div class="facility-desc">
                     <p style="color: var(--primary-navy);">Equipped with high-speed, wide-format flex printing machinery and heavy processing modules to deliver sharp, true-to-file colors on time.</p>
                 </div>
@@ -433,22 +474,23 @@
                     </div>
                     <div class="info-block">
                         <strong>📧 Official E-mail</strong>
-                        <p><a href="mailto:indianflex.kne@gmail.com">indianflex.kne@gmail.com</a></p>
+                        <p><a href="mailto:indianflex.kne@gmail.com" class="clickable-link">indianflex.kne@gmail.com</a></p>
                     </div>
                     <div class="info-block">
-                        <strong>📞 Official Hotline / WhatsApp</strong>
-                        <p>+91 91428 35679</p>
+                        <strong>📞 Official Hotline / Direct Call</strong>
+                        <p><a href="tel:+919142835679" class="clickable-link">+91 91428 35679</a></p>
                     </div>
                     <div class="info-block">
                         <strong>🌐 Digital Handles</strong>
                         <div class="social-handles">
-                            <a href="#" target="_blank">Facebook</a>
+                            <a href="https://wa.me/919142835679" class="wa-link" target="_blank">WhatsApp</a>
+                            <a href="#" class="insta-link" target="_blank">Instagram</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57474.34707616238!2d87.90161475!3d26.07727195!2m3!1f0!2f0!3f0!3m2!1i1024!2i1067!4m5!3s0x39e51631da0b6e9b%3A0xa1fa816223594b2a!2sKishanganj%2C%20Bihar!5e0!3m2!1sen!2sin!4v1716200000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.957411136639!2d87.94296316265168!3d26.097926614613616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e517aa3b1c7cb9%3A0x528c26eed8442b7e!2sIndian%20Flex!5e0!3m2!1sen!2sin!4v1779359745501!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
             </div>
