@@ -1,37 +1,33 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" id="root-html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indian Flex - Kishanganj | Premium B2B Printing Hub</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;700;800&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* ==========================================
-           COLOR PALETTE & CORE STYLES (PREMIUM BRIGHT)
-           ========================================== */
         :root {
-            --bg-light: #ffffff;      /* Pure White Surface */
-            --bg-subtle: #f8fafc;     /* Soft Light Grey Area */
-            --card-bg: #ffffff;       /* Clean White Card */
-            --primary-navy: #0f172a;  /* Deep Navy Blue for Typography */
-            --indian-saffron: #ff6b00;/* Rich Premium Saffron Accent */
-            --indian-green: #008751;  /* Emerald Green Accent */
-            --accent-cyan: #0ea5e9;   /* CMYK Cyan Touch */
-            --whatsapp-green: #25D366;/* Official WhatsApp */
-            --instagram-pink: #E1306C;/* Official Instagram */
-            --text-main: #1e293b;     /* Dark Charcoal Text for High Readability */
-            --text-muted: #64748b;    /* Medium Muted Grey */
-            --border-color: #e2e8f0;  /* Subtle Soft Border */
+            --bg-light: #ffffff;      
+            --bg-subtle: #f8fafc;     
+            --card-bg: #ffffff;       
+            --primary-navy: #0f172a;  
+            --indian-saffron: #ff6b00;
+            --indian-green: #008751;  
+            --accent-cyan: #0ea5e9;   
+            --whatsapp-green: #25D366;
+            --instagram-pink: #E1306C;
+            --text-main: #1e293b;     
+            --text-muted: #64748b;    
+            --border-color: #e2e8f0;  
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            transition: all 0.2s ease;
         }
 
         body {
@@ -39,6 +35,18 @@
             color: var(--text-main);
             line-height: 1.6;
             padding-top: 80px;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* उर्दू भाषा के लिए स्पेशल स्टाइलिंग (Right to Left) */
+        .lang-ur {
+            direction: rtl;
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+        .lang-ur .nav-container, 
+        .lang-ur .contact-flex,
+        .lang-ur .policy-card h3 {
+            direction: rtl;
         }
 
         .container {
@@ -47,9 +55,6 @@
             padding: 0 24px;
         }
 
-        /* ==========================================
-           HEADER & NAVIGATION ARCHITECTURE
-           ========================================== */
         header {
             background: rgba(255, 255, 255, 0.95);
             position: fixed;
@@ -83,6 +88,12 @@
             object-fit: contain;
         }
 
+        .nav-right-switch {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -93,17 +104,39 @@
             color: var(--primary-navy);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            transition: 0.3s;
+            font-size: 15px;
         }
 
         .nav-links a:hover {
             color: var(--indian-saffron);
         }
 
-        /* ==========================================
-           HERO SHOWCASE SECTION WITH IMPROVED FONTS
-           ========================================== */
+        /* भाषा बदलने वाले बटन की स्टाइल */
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+            background: #f1f5f9;
+            padding: 4px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-navy);
+            color: #ffffff;
+        }
+
         .hero-section {
             padding: 120px 0 90px 0;
             text-align: center;
@@ -116,38 +149,25 @@
         }
 
         .hero-content h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 58px;
+            font-size: 50px;
             font-weight: 800;
             color: var(--primary-navy);
             margin-bottom: 20px;
-            line-height: 1.2;
-            letter-spacing: -1.5px;
+            line-height: 1.3;
         }
 
         .hero-content h1 span {
             display: block;
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 400;
             color: var(--text-muted);
-            letter-spacing: -0.5px;
             margin-top: 5px;
-            background: none;
-            -webkit-text-fill-color: initial;
         }
 
         .hero-content p {
-            font-size: 19px;
+            font-size: 18px;
             color: var(--text-muted);
             margin-bottom: 35px;
-            font-weight: 400;
-        }
-
-        .hero-action-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
         .btn-whatsapp {
@@ -155,22 +175,17 @@
             background-color: var(--whatsapp-green);
             color: #ffffff;
             text-decoration: none;
-            padding: 18px 36px;
+            padding: 16px 32px;
             font-weight: 700;
             font-size: 16px;
             border-radius: 50px;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: 0.3s transform, 0.3s box-shadow;
         }
 
         .btn-whatsapp:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
 
-        /* ==========================================
-           COMMON SECTION UTILITIES
-           ========================================== */
         .section-padding {
             padding: 100px 0;
         }
@@ -180,13 +195,11 @@
         }
 
         .section-title {
-            font-family: 'Poppins', sans-serif;
             text-align: center;
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 700;
             color: var(--primary-navy);
             margin-bottom: 60px;
-            position: relative;
         }
 
         .section-title::after {
@@ -199,9 +212,6 @@
             border-radius: 2px;
         }
 
-        /* ==========================================
-           CORE B2B TRUST & POLICY SECTIONS
-           ========================================== */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -214,22 +224,12 @@
             padding: 40px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
-            transition: 0.3s transform, 0.3s box-shadow, 0.3s border-color;
-        }
-
-        .policy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-            border-color: var(--accent-cyan);
         }
 
         .policy-card h3 {
-            font-size: 22px;
+            font-size: 20px;
             margin-bottom: 15px;
             color: var(--primary-navy);
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .policy-card p {
@@ -237,15 +237,11 @@
             font-size: 15px;
         }
 
-        /* ==========================================
-           FACILITY / WORKSPACE DISPLAY
-           ========================================== */
         .facility-display {
             background: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 25px rgba(15, 23, 42, 0.03);
         }
 
         .facility-img {
@@ -265,9 +261,6 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* ==========================================
-           CONTACT & LIVE GOOGLE MAPS INTEGRATION
-           ========================================== */
         .contact-flex {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -292,19 +285,10 @@
         }
 
         .info-block p, .info-block a {
-            font-size: 19px;
+            font-size: 18px;
             color: var(--primary-navy);
             text-decoration: none;
             font-weight: 600;
-        }
-
-        .info-block a.clickable-link {
-            color: var(--primary-navy);
-            transition: color 0.2s;
-        }
-
-        .info-block a.clickable-link:hover {
-            color: var(--indian-saffron);
         }
 
         .social-handles {
@@ -314,36 +298,18 @@
         }
 
         .social-handles a {
-            font-size: 16px;
-            text-decoration: none;
-            border-bottom: 1px dashed transparent;
-            padding-bottom: 2px;
             font-weight: 700;
-            transition: 0.3s;
+            text-decoration: none;
         }
 
-        .social-handles a.insta-link {
-            color: var(--instagram-pink);
-        }
-        
-        .social-handles a.insta-link:hover {
-            border-bottom-color: var(--instagram-pink);
-        }
-
-        .social-handles a.wa-link {
-            color: var(--whatsapp-green);
-        }
-
-        .social-handles a.wa-link:hover {
-            border-bottom-color: var(--whatsapp-green);
-        }
+        .social-handles a.insta-link { color: var(--instagram-pink); }
+        .social-handles a.wa-link { color: var(--whatsapp-green); }
 
         .map-wrapper {
             height: 400px;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 25px rgba(15, 23, 42, 0.04);
         }
 
         .map-wrapper iframe {
@@ -352,9 +318,6 @@
             border: 0;
         }
 
-        /* ==========================================
-           FOOTER SYSTEM
-           ========================================== */
         footer {
             background: #0f172a;
             padding: 50px 0;
@@ -367,40 +330,18 @@
             font-size: 11px;
             color: #475569;
             margin-top: 8px;
-            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* ==========================================
-           RESPONSIVE LAYOUT FIXES (MOBILE FRIENDLY)
-           ========================================== */
         @media (max-width: 968px) {
-            .contact-flex {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero-content h1 {
-                font-size: 42px;
-                letter-spacing: -1px;
-            }
-            .hero-content h1 span {
-                font-size: 30px;
-            }
-            .nav-container {
-                padding: 15px 16px;
-            }
-            .logo-img {
-                height: 38px;
-            }
+            .contact-flex { grid-template-columns: 1fr; gap: 40px; }
+            .hero-content h1 { font-size: 38px; }
+            .hero-content h1 span { font-size: 28px; }
         }
 
-        @media (max-width: 600px) {
-            .nav-links {
-                display: none;
-            }
-            body {
-                padding-top: 70px;
-            }
+        @media (max-width: 650px) {
+            .nav-links { display: none; }
+            .nav-container { padding: 15px 16px; }
         }
     </style>
 </head>
@@ -409,54 +350,62 @@
     <header>
         <div class="nav-container">
             <div class="logo-wrapper">
-                <a href="#"><img src="assets/logo.png" alt="Indian Flex Logo" class="logo-img"></a>
+                <a href="#"><img src="https://github.com/studyspace011/indianflex/blob/main/assets/logo.png?raw=true" alt="Indian Flex Logo" class="logo-img"></a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#facility">Facility</a></li>
-                <li><a href="#contact">Contact Hub</a></li>
-            </ul>
+            <div class="nav-right-switch">
+                <ul class="nav-links">
+                    <li><a href="#about" id="nav-about">हमारे बारे में</a></li>
+                    <li><a href="#facility" id="nav-facility">मशीनरी/सेटअप</a></li>
+                    <li><a href="#contact" id="nav-contact">संपर्क करें</a></li>
+                </ul>
+                
+                <div class="lang-switcher">
+                    <button class="lang-btn" onclick="switchLang('en')">EN</button>
+                    <button class="lang-btn active" onclick="switchLang('hi')">हिंदी</button>
+                    <button class="lang-btn" onclick="switchLang('ur')">اردو</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <section class="hero-section">
         <div class="container hero-content">
-            <h1>Indian Flex <span>Printing Press</span></h1>
-            <p>We are a dedicated backend infrastructure for Cyber Cafes, Printers, and Wedding Card Vendors. High quality, competitive wholesale rates, and strict privacy protection.</p>
+            <h1 id="hero-title">इंडियन फ्लेक्स <span>प्रिंटिंग प्रेस</span></h1>
+            <p id="hero-desc">हम साइबर कैफे, प्रिंटर भाइयों और शादी कार्ड के होलसेल व्यापारियों के लिए एक मजबूत बैकएंड सपोर्ट हैं। बेहतरीन क्वालिटी, सबसे कम होलसेल रेट और ग्राहकों की गोपनीयता की पूरी गारंटी।</p>
             
             <div class="hero-action-buttons">
-                <a href="https://wa.me/919142835679?text=Namaskar%20Indian%20Flex%21%20Shop%20verification%20ke%20liye%20details%20bhej%20raha%20hu%2C%20wholesale%20rate%20sheet%20access%20chahiye." class="btn-whatsapp" target="_blank">
-                    💬 Contact via WhatsApp
+                <a href="https://wa.me/919142835679?text=Namaskar%20Indian%20Flex%21%20Shop%20verification%20ke%20liye%20details%20bhej%20raha%20hu%2C%20wholesale%20rate%20sheet%20access%20chahiye." class="btn-whatsapp" target="_blank" id="hero-btn">
+                    💬 व्हाट्सएप पर संपर्क करें
                 </a>
             </div>
         </div>
     </section>
 
     <section class="container section-padding" id="about">
-        <h2 class="section-title">Wholesale Operations & Trust</h2>
+        <h2 class="section-title" id="sec1-title">होलसेल व्यापार और हमारा भरोसा</h2>
         <div class="grid-3">
             <div class="policy-card">
-                <h3>🔒 100% Privacy</h3>
-                <p>We do not have direct contact with your end-users. Your client data and privacy are 100% guaranteed with us.</p>
+                <h3 id="card1-title">🔒 100% प्राइवेसी</h3>
+                <p id="card1-desc">हम आपके ग्राहकों (End-Users) से सीधा संपर्क नहीं करते हैं। आपकी कस्टमर डिटेल्स और प्राइवेसी हमारे पास 100% सुरक्षित है।</p>
             </div>
             <div class="policy-card">
-                <h3>⚡ Infrastructure Power</h3>
-                <p>Our printing facility is optimized to handle heavy production with rapid turnaround times. For urgent orders, we offer overnight processing to ensure your job is ready by morning.</p>
+                <h3 id="card2-title">⚡ एडवांस इंफ्रास्ट्रक्चर</h3>
+                <p id="card2-desc">हमारी प्रिंटिंग यूनिट बड़े ऑर्डर्स को बहुत कम समय में तैयार करने के लिए सक्षम है। इमरजेंसी ऑर्डर्स के लिए हम ओवरनाइट (रातभर) प्रिंटिंग की सुविधा भी देते हैं ताकि सुबह माल तैयार मिले।</p>
             </div>
             <div class="policy-card">
-                <h3>⚖️ Split Pricing Rule</h3>
-                <p>Walk-in customers hit standard market retail prices. We protect your margins, never competing with our partners.</p>
+                <h3 id="card3-title">⚖️ स्प्लिट प्राइसिंग नियम</h3>
+                <p id="card3-desc">बाहर से सीधे आने वाले रिटेल ग्राहकों के लिए मार्केट का सामान्य रेट लागू होता है। हम आपके प्रॉफिट मार्जिन की रक्षा करते हैं, अपने पार्टनर्स से कभी कम्पीट नहीं करते।</p>
             </div>
         </div>
     </section>
 
     <section class="bg-subtle-section section-padding" id="facility">
         <div class="container">
-            <h2 class="section-title">Our Printing Facility</h2>
+            <h2 class="section-title" id="sec2-title">हमारी प्रिंटिंग यूनिट</h2>
             <div class="facility-display">
-                <img src="assets/workshop.jpeg" alt="Indian Flex Workshop Unit" class="workshop-img">
+                <img src="assets/workshop.jpeg" alt="Indian Flex Workshop" class="facility-img">
                 <div class="facility-desc">
-                    <p style="color: var(--primary-navy);">Equipped with high-speed, wide-format flex printing machinery and heavy processing modules to deliver sharp, true-to-file colors on time.</p>
+                    <p id="facility-text" style="color: var(--primary-navy);">हाई-स्पीड, वाइड-फॉर्मेट फ्लेक्स प्रिंटिंग मशीनों और हैवी प्रोसेसिंग टूल्स से लैस, ताकि आपको सही समय पर एकदम सटीक और ब्राइट कलर्स मिलें।</p>
                 </div>
             </div>
         </div>
@@ -464,24 +413,24 @@
 
     <section class="bg-subtle-section section-padding" id="contact">
         <div class="container">
-            <h2 class="section-title">Connect With Us</h2>
+            <h2 class="section-title" id="sec3-title">हमसे जुड़ें</h2>
             <div class="contact-flex">
                 
                 <div class="info-panel">
                     <div class="info-block">
-                        <strong>📍 Press Location</strong>
-                        <p>Indian Flex Facility, Kishanganj, Bihar - 855107</p>
+                        <strong id="info-loc">📍 प्रेस का पता</strong>
+                        <p>इंडियन फ्लेक्स फैसिलिटी, किशनगंज, बिहार - 855107</p>
                     </div>
                     <div class="info-block">
-                        <strong>📧 Official E-mail</strong>
-                        <p><a href="mailto:indianflex.kne@gmail.com" class="clickable-link">indianflex.kne@gmail.com</a></p>
+                        <strong id="info-email">📧 ऑफिशियल ईमेल</strong>
+                        <p><a href="mailto:indianflex.kne@gmail.com">indianflex.kne@gmail.com</a></p>
                     </div>
                     <div class="info-block">
-                        <strong>📞 Official Hotline / Direct Call</strong>
-                        <p><a href="tel:+919142835679" class="clickable-link">+91 91428 35679</a></p>
+                        <strong id="info-phone">📞 हेल्पलाइन / डायरेक्ट कॉल</strong>
+                        <p><a href="tel:+919142835679">+91 91428 35679</a></p>
                     </div>
                     <div class="info-block">
-                        <strong>🌐 Digital Handles</strong>
+                        <strong id="info-social">🌐 सोशल मीडिया हैंडल्स</strong>
                         <div class="social-handles">
                             <a href="https://wa.me/919142835679" class="wa-link" target="_blank">WhatsApp</a>
                             <a href="#" class="insta-link" target="_blank">Instagram</a>
@@ -490,7 +439,7 @@
                 </div>
 
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.957411136639!2d87.94296316265168!3d26.097926614613616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e517aa3b1c7cb9%3A0x528c26eed8442b7e!2sIndian%20Flex!5e0!3m2!1sen!2sin!4v1779359745501!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=Kishanganj&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
             </div>
@@ -498,9 +447,92 @@
     </section>
 
     <footer>
-        <p>© 2026 Indian Flex Printing Press, Kishanganj, Bihar. All Rights Reserved.</p>
-        <p class="compliance">B2B Verified Reseller Portal Compliance.</p>
+        <p id="footer-text">© 2026 इंडियन फ्लेक्स प्रिंटिंग प्रेस, किशनगंज, बिहार। सर्वाधिकार सुरक्षित।</p>
+        <p class="compliance" id="footer-comp">B2B Verified Reseller Portal Compliance.</p>
     </footer>
 
+    <script>
+        const data = {
+            en: {
+                navAbout: "About Us", navFacility: "Facility", navContact: "Contact Hub",
+                heroTitle: "Indian Flex <span>Printing Press</span>",
+                heroDesc: "We are a dedicated backend infrastructure for Cyber Cafes, Printers, and Wedding Card Vendors. High quality, competitive wholesale rates, and strict privacy protection.",
+                heroBtn: "💬 Contact via WhatsApp",
+                sec1Title: "Wholesale Operations & Trust",
+                card1Title: "🔒 100% Privacy", card1Desc: "We do not have direct contact with your end-users. Your client data and privacy are 100% guaranteed with us.",
+                card2Title: "⚡ Infrastructure Power", card2Desc: "Our printing facility is optimized to handle heavy production with rapid turnaround times. For urgent orders, we offer overnight processing to ensure your job is ready by morning.",
+                card3Title: "⚖️ Split Pricing Rule", card3Desc: "Walk-in customers hit standard market retail prices. We protect your margins, never competing with our partners.",
+                sec2Title: "Our Printing Facility", facilityText: "Equipped with high-speed, wide-format flex printing machinery and heavy processing modules to deliver sharp, true-to-file colors on time.",
+                sec3Title: "Connect With Us", infoLoc: "📍 Press Location", infoEmail: "📧 Official E-mail", infoPhone: "📞 Official Hotline", infoSocial: "🌐 Digital Handles",
+                footerText: "© 2026 Indian Flex Printing Press, Kishanganj, Bihar. All Rights Reserved."
+            },
+            hi: {
+                navAbout: "हमारे बारे में", navFacility: "मशीनरी/सेटअप", navContact: "संपर्क करें",
+                heroTitle: "इंडियन फ्लेक्स <span>प्रिंटिंग प्रेस</span>",
+                heroDesc: "हम साइबर कैफे, प्रिंटर भाइयों और शादी कार्ड के होलसेल व्यापारियों के लिए एक मजबूत बैकएंड सपोर्ट हैं। बेहतरीन क्वालिटी, सबसे कम होलसेल रेट और ग्राहकों की गोपनीयता की पूरी गारंटी।",
+                heroBtn: "💬 व्हाट्सएप पर संपर्क करें",
+                sec1Title: "होलसेल व्यापार और हमारा भरोसा",
+                card1Title: "🔒 100% प्राइवेसी", card1Desc: "हम आपके ग्राहकों (End-Users) से सीधा संपर्क नहीं करते हैं। आपकी कस्टमर डिटेल्स और प्राइवेसी हमारे पास 100% सुरक्षित है।",
+                card2Title: "⚡ एडवांस इंफ्रास्ट्रक्चर", card2Desc: "हमारी printing unit बड़े ऑर्डर्स को बहुत कम समय में तैयार करने के लिए सक्षम है। इमरजेंसी ऑर्डर्स के लिए हम ओवरनाइट (रातभर) प्रिंटिंग की सुविधा भी देते हैं ताकि सुबह माल तैयार मिले।",
+                card3Title: "⚖️ स्प्लिट प्राइसिंग नियम", card3Desc: "बाहर से सीधे आने वाले रिटेल ग्राहकों के लिए मार्केट का सामान्य रेट लागू होता है। हम आपके प्रॉफिट मार्जिन की रक्षा करते हैं, अपने पार्टनर्स से कभी कम्पीट नहीं करते।",
+                sec2Title: "हमारी प्रिंटिंग यूनिट", facilityText: "हाई-स्पीड, वाइड-फॉर्मेट फ्लेक्स प्रिंटिंग मशीनों और हैवी प्रोसेसिंग टूल्स से लैस, ताकि आपको सही समय पर एकदम सटीक और ब्राइट कलर्स मिलें।",
+                sec3Title: "हमसे जुड़ें", infoLoc: "📍 प्रेस का पता", infoEmail: "📧 ऑफिशियल ईमेल", infoPhone: "📞 हेल्पलाइन / डायरेक्ट कॉल", infoSocial: "🌐 सोशल मीडिया हैंडल्स",
+                footerText: "© 2026 इंडियन फ्लेक्स प्रिंटिंग प्रेस, किशनगंज, बिहार। सर्वाधिकार सुरक्षित।"
+            },
+            ur: {
+                navAbout: "ہمارے بارے میں", navFacility: "مشینری اور سیٹ اپ", navContact: "رابطہ کریں",
+                heroTitle: "انڈین فلیکس <span>پرنٹنگ پریس</span>",
+                heroDesc: "ہم سائبر کیفے، پرنٹرز اور شادی کارڈ کے ہول سیل تاجروں کے لیے ایک مضبوط بیک اینڈ سپورٹ ہیں۔ بہترین کوالٹی، سب سے کم ہول سیل ریٹ اور رازداری کی مکمل گارنٹی۔",
+                heroBtn: "💬 واٹس ایپ پر رابطہ کریں",
+                sec1Title: "ہول سیل کاروبار اور ہمارا بھروسہ",
+                card1Title: "🔒 100% رازداری", card1Desc: "ہم آپ کے صارفین (End-Users) سے براہ راست رابطہ نہیں کرتے ہیں۔ آپ کے کسٹمر کی تفصیلات ہمارے پاس 100% محفوظ ہیں۔",
+                card2Title: "⚡ ایڈوانس انفراسٹرکچر", card2Desc: "ہماری پرنٹنگ یونٹ بڑے آرڈرز کو بہت کم وقت میں تیار کرنے کی صلاحیت رکھتی ہے۔ ہنگامی آرڈرز کے لیے ہم رات بھر پرنٹنگ کی سہولت بھی دیتے ہیں۔",
+                card3Title: "⚖️ قیمتوں کا اصول", card3Desc: "براہ راست آنے والے ریٹیل صارفین کے لیے مارکیٹ کا عام ریٹ لاگو ہوتا ہے۔ ہم آپ کے منافع کا تحفظ کرتے ہیں۔",
+                sec2Title: "ہماری پرنٹنگ یونٹ", facilityText: "ہائی اسپیڈ، وائڈ فارمیٹ فلیکس پرنٹنگ مشینوں سے لیس، تاکہ آپ کو صحیح وقت پر درست اور چمکدار رنگ ملیں۔",
+                sec3Title: "ہم سے جڑیں", infoLoc: "📍 پریس کا پتہ", infoEmail: "📧 آفیشل ای میل", infoPhone: "📞 ہیلپ لائن / ڈائریکٹ کال", infoSocial: "🌐 سوشل میڈیا ہینڈلز",
+                footerText: "© 2026 انڈین فلیکس پرنٹنگ پریس، کشن گنج، بہار۔ جملہ حقوق محفوظ ہیں۔"
+            }
+        };
+
+        function switchLang(lang) {
+            // एक्टिव बटन क्लास बदलें
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // उर्दू के लिए RTL (Right to Left) लेआउट और फोंट चेंज करें
+            const rootHtml = document.getElementById('root-html');
+            if (lang === 'ur') {
+                rootHtml.className = "lang-ur";
+                rootHtml.setAttribute('lang', 'ur');
+            } else {
+                rootHtml.className = "";
+                rootHtml.setAttribute('lang', lang);
+                document.body.style.fontFamily = lang === 'hi' ? "'Noto Sans Devanagari', sans-serif" : "'Inter', sans-serif";
+            }
+
+            // टेक्स्ट बदलें
+            document.getElementById('nav-about').innerText = data[lang].navAbout;
+            document.getElementById('nav-facility').innerText = data[lang].navFacility;
+            document.getElementById('nav-contact').innerText = data[lang].navContact;
+            document.getElementById('hero-title').innerHTML = data[lang].heroTitle;
+            document.getElementById('hero-desc').innerText = data[lang].heroDesc;
+            document.getElementById('hero-btn').innerText = data[lang].heroBtn;
+            document.getElementById('sec1-title').innerText = data[lang].sec1Title;
+            document.getElementById('card1-title').innerText = data[lang].card1Title;
+            document.getElementById('card1-desc').innerText = data[lang].card1Desc;
+            document.getElementById('card2-title').innerText = data[lang].card2Title;
+            document.getElementById('card2-desc').innerText = data[lang].card2Desc;
+            document.getElementById('card3-title').innerText = data[lang].card3Title;
+            document.getElementById('card3-desc').innerText = data[lang].card3Desc;
+            document.getElementById('sec2-title').innerText = data[lang].sec2Title;
+            document.getElementById('facility-text').innerText = data[lang].facilityText;
+            document.getElementById('sec3-title').innerText = data[lang].sec3Title;
+            document.getElementById('info-loc').innerText = data[lang].infoLoc;
+            document.getElementById('info-email').innerText = data[lang].infoEmail;
+            document.getElementById('info-phone').innerText = data[lang].infoPhone;
+            document.getElementById('info-social').innerText = data[lang].infoSocial;
+            document.getElementById('footer-text').innerText = data[lang].footerText;
+        }
+    </script>
 </body>
 </html>
